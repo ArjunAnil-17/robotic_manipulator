@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<robot name="mrm" xmlns:xacro="https://www.ros.org/wiki/xacro" >
+
+	<!-- BGN Include -->
+	<xacro:include filename="$(find rbt_manipulator)/urdf/links_joint.xacro" />
+	<xacro:include filename="$(find rbt_manipulator)/urdf/robot_parameters.xacro" />
+	<!-- END Include -->
+	
+	<!-- BGN Robot description -->
+	<xacro:m_link_box name="${l00}" origin_xyz="0 0 0" origin_rpy="0 0 0" size="1 1 1" />
+
+	<xacro:m_joint name="${l00}__${l01}" type="revolute" axis_xyz="0 0 1" origin_rpy="0 0 0" orgin_xyz="0 0 0.5" parent="${l00}" child="${l01}" />
+	
+	<xacro:m_link_cylinder name="${l01}" origin_xyz="0 0 0.2" origin_rpy="0 0 0" radius="0.35" length="0.4" />
+
+	<xacro:m_joint name="${l01}__${l02}" type="revolute" axis_xyz="0 1 0" origin_rpy="0 0 0" orgin_xyz="0 0 0.4" parent="${l01}" child="${l02}" />
+	
+	<xacro:m_link_cylinder name="${l02}" origin_xyz="0 0 0.4" origin_rpy="0 0 0" radius="0.15" length="0.8" />
+	
+	<xacro:m_joint name="${l02}__${l03}" type="revolute" axis_xyz="0 1 0" origin_rpy="0 0 0" orgin_xyz="0 0 0.8" parent="${l02}" child="${l03}" />
+	
+	<xacro:m_link_cylinder name="${l03}" origin_xyz="0 0 0.4" origin_rpy="0 0 0" radius="0.15" length="0.8" />
+	
+	<xacro:m_joint name="${l03}__${l04}" type="revolute" axis_xyz="0 1 0" origin_rpy="0 0 0" orgin_xyz="0 0 0.8" parent="${l03}" child="${l04}" />
+	
+	<xacro:m_link_cylinder name="${l04}" origin_xyz="0 0 0.4" origin_rpy="0 0 0" radius="0.15" length="0.8" />
+	
+	<xacro:m_joint name="${l04}__${l05}" type="revolute" axis_xyz="0 0 1" origin_rpy="0 0 0" orgin_xyz="0 0 0.8" parent="${l04}" child="${l05}" />
+	
+	<xacro:m_link_cylinder name="${l05}" origin_xyz="0 0 0.125" origin_rpy="0 0 0" radius="0.15" length="0.25" />
+    <!-- END Robot description -->
+</robot>
