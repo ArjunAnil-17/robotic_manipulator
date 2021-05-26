@@ -21,7 +21,7 @@
 		</transmission>
 	</xacro:macro>
 	
-	<xacro:macro name="m_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz" >
+	<xacro:macro name="m_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz color_c rgba" >
 		<link name="${name}" >
 			<inertial>
 				<mass value="${mass}" />
@@ -39,11 +39,14 @@
 		 	 <geometry>
 		 		<cylinder radius="${radius}" length="${length}" />
 	 	 	 </geometry>
+	 	 	 <material name="${color_c}">
+	 			<color rgba="${rgba}" />
+	 		</material>
  	 		</visual>
 		</link>
 	</xacro:macro>
 	
-	<xacro:macro name="m_link_box" params="name origin_xyz origin_rpy size mass ixx ixy ixz iyy iyz izz" >
+	<xacro:macro name="m_link_box" params="name origin_xyz origin_rpy size mass ixx ixy ixz iyy iyz izz color_c rgba" >
 		<link name="${name}" >
 			<inertial>
 				<mass value="${mass}" />
@@ -61,6 +64,9 @@
 		 	 <geometry>
 		 		<box size="${size}" />
 	 	 	 </geometry>
+	 	 	 <material name="${color_c}">
+	 			<color rgba="${rgba}" />
+	 		</material>
  	 		</visual>
 		</link>
 	</xacro:macro>
