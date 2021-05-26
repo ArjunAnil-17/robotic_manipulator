@@ -1,0 +1,6 @@
+Controller moving command:
+	rostopic pub -1 /mrm/joint1_position_controller/command std_msgs/Float64 "data: 3.7"
+
+Commands to load into Gazebo
+	roslaunch gazebo_ros empty_world.launch
+	roslaunch rbt_manipulator spawn.launch
